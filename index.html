@@ -4,18 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Green Flag BS — Catálogo de auriculares</title>
-  <meta name="description" content="Auriculares KZ y más en Paraguay. Consulta por WhatsApp desde cada producto." />
+  <meta name="description" content="Auriculares KZ en Paraguay. Consulta por WhatsApp desde cada producto." />
   <meta name="theme-color" content="#22c55e" />
   <!-- Open Graph para compartir en redes -->
   <meta property="og:title" content="Green Flag BS — Catálogo" />
   <meta property="og:description" content="Toca el ícono de WhatsApp del producto para consultarnos." />
   <meta property="og:type" content="website" />
-  <!-- Cambia esta imagen por una tuya en /images/og-cover.jpg -->
   <meta property="og:image" content="images/og-cover.jpg" />
-  <!-- Favicon opcional en /images/favicon.png -->
   <link rel="icon" href="images/favicon.png" />
   <style>
-    :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#22c55e;--brand-2:#16a34a;--stroke:rgba(255,255,255,.08)}
+    :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#22c55e;--stroke:rgba(255,255,255,.08)}
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;background:linear-gradient(135deg,#0f2027 0%,#203a43 50%,#033d49 100%);color:var(--text)}
 
@@ -29,11 +27,9 @@
     .hero{max-width:1100px;margin:10px auto 22px;padding:0 20px}
     .hero-card{background:linear-gradient(180deg,rgba(17,24,39,.9),rgba(17,24,39,.6));border:1px solid var(--stroke);border-radius:22px;overflow:hidden}
     .hero-inner{display:grid;grid-template-columns:1fr;padding:20px}
-    @media(min-width:920px){.hero-inner{grid-template-columns:1.4fr .9fr;align-items:center}}
-    .hero h1{font-size:28px;margin:0 0 8px}
+    @media(min-width:920px){.hero-inner{grid-template-columns:1.3fr .9fr;align-items:center}}
+    .hero h1{font-size:30px;margin:0 0 8px}
     .hero p{margin:0;color:var(--muted)}
-    .trust{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
-    .chip{display:flex;align-items:center;gap:6px;border:1px dashed var(--stroke);padding:6px 10px;border-radius:999px;font-size:13px;color:#cbd5e1}
 
     /* Main */
     main{max-width:1100px;margin:0 auto;padding:12px 20px 60px}
@@ -50,7 +46,11 @@
     .content{padding:14px}
     .badge{display:inline-block;font-size:11px;font-weight:700;color:#052e16;background:linear-gradient(180deg,#86efac,#34d399);border:1px solid #16a34a;padding:4px 8px;border-radius:999px;margin-bottom:8px}
     .title{font-size:16px;font-weight:800;margin:0 0 4px}
-    .sku{font-size:12px;color:var(--muted);margin:0 0 10px}
+    .sku{font-size:12px;color:var(--muted);margin:0 0 8px}
+    .desc{font-size:13px;color:#cbd5e1;line-height:1.45;margin:0 0 10px}
+    .features{list-style:none;margin:0 0 10px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .features li{font-size:12.5px;color:#d1d5db;display:flex;gap:6px;align-items:flex-start}
+    .features li svg{width:14px;height:14px;flex:0 0 14px}
     .row{display:flex;align-items:center;justify-content:space-between;gap:10px}
     .price{font-weight:900}
 
@@ -60,7 +60,7 @@
     .wa-btn svg{width:20px;height:20px}
 
     /* Coming soon */
-    .soon{position:relative;filter:saturate(.7)}
+    .soon{position:relative;filter:saturate(.75)}
     .soon::after{content:"Próximamente";position:absolute;top:10px;left:10px;background:rgba(2,6,23,.85);border:1px solid var(--stroke);padding:6px 10px;border-radius:999px;font-size:12px}
     .soon .wa-btn{opacity:.4;pointer-events:none}
 
@@ -71,25 +71,19 @@
 <body>
   <header>
     <div class="brand">
-      <!-- Cambia por tu logo en /images/logo.png -->
       <img src="images/logo.png" alt="Green Flag BS" />
       <div class="name">Green Flag BS</div>
     </div>
     <!-- Se retiró el botón de WhatsApp del header como pediste -->
   </header>
 
-  <!-- Hero con propuesta de valor y prueba social simple -->
+  <!-- Hero con slogan -->
   <section class="hero">
     <div class="hero-card">
       <div class="hero-inner">
         <div>
-          <h1>Sonido que rinde más por tu dinero</h1>
-          <p>Catálogo curado de auriculares KZ. Compra segura en Paraguay, asesoría por WhatsApp desde cada producto.</p>
-          <div class="trust">
-            <div class="chip">🚚 Envíos a todo PY</div>
-            <div class="chip">🛡️ Garantía oficial</div>
-            <div class="chip">✨ Probados y recomendados</div>
-          </div>
+          <h1>Escuchá más. Gastá menos.</h1>
+          <p>Catálogo compacto de KZ con la mejor relación calidad‑precio. Asesoría por WhatsApp desde cada producto.</p>
         </div>
         <img src="images/og-cover.jpg" alt="Destacados del catálogo" class="thumb" />
       </div>
@@ -99,17 +93,23 @@
   <main>
     <h2>Disponibles</h2>
     <section class="grid" id="catalogo">
-      <!-- Producto 1 -->
+      <!-- Producto 1: KZ EDX Pro X -->
       <article class="card" data-name="KZ EDX Pro X" data-price="150000" data-sku="EDXPROX" data-variant="Black">
         <img class="thumb" src="images/edxpro-x.jpg" alt="KZ EDX Pro X" loading="lazy" width="600" height="600" />
         <div class="content">
-          <span class="badge">Más vendido</span>
+          <span class="badge">Precio especial</span>
           <h3 class="title">KZ EDX Pro X</h3>
           <p class="sku">SKU: EDXPROX</p>
+          <p class="desc">Calidad‑precio legendaria. Perfil en V: graves con pegada y agudos brillantes para escuchar de todo con energía. Cómodos y livianos para uso diario.</p>
+          <ul class="features">
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Sonido divertido (V‑shape)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Buen aislamiento pasivo</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Cable trenzado</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Tips incluidos</li>
+          </ul>
           <div class="row">
             <span class="price" data-price>Gs. 150.000</span>
             <button class="wa-btn" aria-label="Consultar por WhatsApp" data-wa>
-              <!-- Ícono WhatsApp inline -->
               <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.8 4.6 2.1 6.4L5 29l8-2.1c1.8 1 3.9 1.6 6 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3Z" stroke="currentColor" opacity=".25"/>
                 <path d="M16.1 6.6c-4.5 0-8.2 3.5-8.2 7.9 0 1.9.7 3.6 1.9 5L9 23.4l3.9-1c1.3.7 2.8 1.1 4.3 1.1 4.5 0 8.2-3.5 8.2-7.9s-3.7-7.9-8.2-7.9Zm4.6 11.5c-.2.5-1 .9-1.4 1-.4.1-1 .1-1.6-.1-.4-.2-1-.3-1.8-.7-3.1-1.4-5.1-4.6-5.2-4.8-.2-.3-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.3.2-.2.6-.3 1-.3h.7c.2 0 .5 0 .7.6.3.7 1 2.4 1 2.6.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.5-.2.9.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.8.4.2.7.2 1 0 .3-.2 1.1-1.1 1.3-1.5.2-.4.6-.3 1-.2.4.2 2.3 1.1 2.8 1.3.4.2.7.3.8.5.1.4 0 .8-.1 1.2Z" fill="#22c55e"/>
@@ -119,13 +119,20 @@
         </div>
       </article>
 
-      <!-- Producto 2 (Bass Edition personalizado) -->
+      <!-- Producto 2: KZ Castor Bass Edition -->
       <article class="card" data-name="KZ Castor" data-price="320000" data-sku="CASTOR-BASS" data-variant="Bass Edition">
         <img class="thumb" src="images/kz-castor-bass.jpg" alt="KZ Castor Bass Edition" loading="lazy" width="600" height="600" />
         <div class="content">
-          <span class="badge">Graves potentes</span>
+          <span class="badge">Stock inicial</span>
           <h3 class="title">KZ Castor — Bass Edition</h3>
           <p class="sku">SKU: CASTOR-BASS</p>
+          <p class="desc">Para amantes del bajo. Grave profundo y contundente con voces claras y escena amplia. Ideal para reguetón, EDM, hip‑hop y cine.</p>
+          <ul class="features">
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Edición Bass enfocada en subgrave</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Buena separación instrumental</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Construcción ligera y cómoda</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Cable trenzado</li>
+          </ul>
           <div class="row">
             <span class="price" data-price>Gs. 320.000</span>
             <button class="wa-btn" aria-label="Consultar por WhatsApp" data-wa>
@@ -201,7 +208,7 @@
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
 
-    // Aplica formato de precios y arma enlaces SOLO en el botón de WhatsApp
+    // Formato de precios y enlace SOLO en el botón de WhatsApp
     document.querySelectorAll('.card').forEach(card => {
       const name    = card.dataset.name || '';
       const price   = card.dataset.price || '';
@@ -221,7 +228,6 @@
       }
     });
 
-    // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
