@@ -1,21 +1,17 @@
 <body>
-  <!-- Overrides de tamaño (solo afecta imágenes dentro de .card) -->
+  <!-- Ajuste mínimo: limita el ancho de cada tarjeta -->
   <style>
-    /* Contenedor de la miniatura: ancho fluido, alto limitado y responsive */
-    .card .thumb-wrap{
-      width: 100%;
-      height: clamp(260px, 30vw, 360px); /* min 260px, crece con la pantalla, tope 360px */
-      background: #0b1220;
-      overflow: hidden;
+    /* Las tarjetas ya no pueden crecer más de 480px (foto = 480x480 máx) */
+    .card{ max-width: 480px; margin-inline: auto; }
+    /* En desktops grandes mantenemos 3 columnas como antes, sin tope si quieres */
+    @media (min-width: 1024px){
+      .card{ max-width: 520px; } /* opcional: puedes poner 480 si la querés más chica */
     }
-    /* En móvil, un poquito más compacto */
-    @media (max-width: 640px){
-      .card .thumb-wrap{ height: 300px; }
-    }
-    /* La imagen rellena el contenedor sin deformarse */
+    /* La imagen de producto conserva 1:1, ocupa el ancho de la tarjeta y se recorta bien */
     .card .thumb{
+      aspect-ratio: 1 / 1;
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
       display: block;
     }
@@ -29,7 +25,7 @@
     <!-- Se retiró el botón de WhatsApp del header como pediste -->
   </header>
 
-  <!-- Hero con slogan (sin cambios, no le aplican los límites de imagen) -->
+  <!-- Hero con slogan -->
   <section class="hero">
     <div class="hero-card">
       <div class="hero-inner">
@@ -37,6 +33,7 @@
           <h1>Escuchá más. Gastá menos.</h1>
           <p>Catálogo compacto de KZ con la mejor relación calidad-precio. Asesoría por WhatsApp desde cada producto.</p>
         </div>
+        <!-- Ojo: esta es la imagen del hero, no está limitada por el tope de .card -->
         <img src="images/og-cover.jpg" alt="Destacados del catálogo" class="thumb" />
       </div>
     </div>
@@ -47,19 +44,17 @@
     <section class="grid" id="catalogo">
       <!-- Producto 1: KZ EDX Pro X -->
       <article class="card" data-name="KZ EDX Pro X" data-price="150000" data-sku="EDXPROX" data-variant="Black">
-        <div class="thumb-wrap">
-          <img class="thumb" src="images/kz_castor_proB6.jpeg" alt="KZ EDX Pro X" loading="lazy" />
-        </div>
+        <img class="thumb" src="images/kz_castor_proB6.jpeg" alt="KZ EDX Pro X" loading="lazy" width="600" height="600" />
         <div class="content">
           <span class="badge">Precio especial</span>
           <h3 class="title">KZ EDX Pro X</h3>
           <p class="sku">SKU: EDXPROX</p>
           <p class="desc">Calidad-precio legendaria. Perfil en V: graves con pegada y agudos brillantes para escuchar de todo con energía. Cómodos y livianos para uso diario.</p>
           <ul class="features">
-            <li><!-- check icon --> <svg viewBox="0 0 24 24" fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Sonido divertido (V-shape)</li>
-            <li><svg viewBox="0 0 24 24" fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Buen aislamiento pasivo</li>
-            <li><svg viewBox="0 0 24 24" fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Cable trenzado</li>
-            <li><svg viewBox="0 0 24 24" fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Tips incluidos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Sonido divertido (V-shape)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Buen aislamiento pasivo</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Cable trenzado</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Tips incluidos</li>
           </ul>
           <div class="row">
             <span class="price" data-price>Gs. 150.000</span>
@@ -75,19 +70,17 @@
 
       <!-- Producto 2: KZ Castor Bass Edition -->
       <article class="card" data-name="KZ Castor" data-price="320000" data-sku="CASTOR-BASS" data-variant="Bass Edition">
-        <div class="thumb-wrap">
-          <img class="thumb" src="images/kz-castor-bass.jpg" alt="KZ Castor Bass Edition" loading="lazy" />
-        </div>
+        <img class="thumb" src="images/kz-castor-bass.jpg" alt="KZ Castor Bass Edition" loading="lazy" width="600" height="600" />
         <div class="content">
           <span class="badge">Stock inicial</span>
           <h3 class="title">KZ Castor — Bass Edition</h3>
           <p class="sku">SKU: CASTOR-BASS</p>
           <p class="desc">Para amantes del bajo. Grave profundo y contundente con voces claras y escena amplia. Ideal para reguetón, EDM, hip-hop y cine.</p>
           <ul class="features">
-            <li><svg viewBox="0 0 24 24" fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Edición Bass enfocada en subgrave</li>
-            <li><svg viewBox="0 0 24 24" fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Buena separación instrumental</li>
-            <li><svg viewBox="0 0 24 24" fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Construcción ligera y cómoda</li>
-            <li><svg viewBox="0 0 24 24" fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Cable trenzado</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Edición Bass enfocada en subgrave</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Buena separación instrumental</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Construcción ligera y cómoda</li>
+            <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Cable trenzado</li>
           </ul>
           <div class="row">
             <span class="price" data-price>Gs. 320.000</span>
@@ -106,9 +99,7 @@
     <h2 style="margin-top:28px">Novedades — Próximamente</h2>
     <section class="grid">
       <article class="card soon">
-        <div class="thumb-wrap">
-          <img class="thumb" src="images/coming-soon-1.jpg" alt="Próximamente 1" loading="lazy" />
-        </div>
+        <img class="thumb" src="images/coming-soon-1.jpg" alt="Próximamente 1" loading="lazy" />
         <div class="content">
           <span class="badge">Coming soon</span>
           <h3 class="title">KZ (Nuevo modelo)</h3>
@@ -126,9 +117,7 @@
       </article>
 
       <article class="card soon">
-        <div class="thumb-wrap">
-          <img class="thumb" src="images/coming-soon-2.jpg" alt="Próximamente 2" loading="lazy" />
-        </div>
+        <img class="thumb" src="images/coming-soon-2.jpg" alt="Próximamente 2" loading="lazy" />
         <div class="content">
           <span class="badge">Coming soon</span>
           <h3 class="title">Ediciones limitadas</h3>
@@ -152,32 +141,25 @@
   </footer>
 
   <script>
-    // 🇵🇾 Escribe tu número en formato internacional SIN +, guiones ni ceros a la izquierda.
-    // Ej: +595 984 123 456  =>  "595984123456"
     const WHATSAPP_NUMBER = "5959XXXXXXXX"; // ← reemplaza por tu número
     const DEFAULT_TEXT = "Hola! Me interesa este producto:";
 
     function formatGs(n){
       try{const s=Number(n).toLocaleString('es-PY');return `Gs. ${s}`;}catch{ return `Gs. ${n}` }
     }
-
     function buildWaLink(name, price, sku, variant){
       const parts = [DEFAULT_TEXT, name];
       if(variant){ parts.push(`(${variant})`); }
       const msg = `${parts.join(' ')} — SKU: ${sku} — Precio: Gs. ${Number(price).toLocaleString('es-PY')}.`;
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
-
-    // Formato de precios y enlace SOLO en el botón de WhatsApp
     document.querySelectorAll('.card').forEach(card => {
       const name    = card.dataset.name || '';
       const price   = card.dataset.price || '';
       const sku     = card.dataset.sku || '';
       const variant = card.dataset.variant || '';
-
       const priceEl = card.querySelector('[data-price]');
       if(priceEl){ priceEl.textContent = formatGs(price); }
-
       const waBtn = card.querySelector('[data-wa]');
       if(waBtn){
         waBtn.addEventListener('click', (e)=>{
@@ -187,7 +169,6 @@
         });
       }
     });
-
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
