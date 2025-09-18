@@ -63,16 +63,16 @@
       box-shadow:0 10px 24px rgba(0,0,0,.18);
       display:flex; flex-direction:column;
     }
-    /* Contenedor cuadrado que garantiza NO deformar tus fotos */
+    
     .thumb-wrap{
-      aspect-ratio:1/1;               /* marco cuadrado consistente */
+      aspect-ratio:1/1;               
       width:100%; background:#0b1220;
-      display:grid; place-items:center; /* centra la imagen */
+      display:grid; place-items:center; 
       overflow:hidden;
     }
     .thumb{
       width:100%; height:100%;
-      object-fit:contain;             /* NUNCA recorta ni deforma */
+      object-fit:contain;           
       image-rendering:auto;
     }
     .content{padding:14px}
@@ -88,7 +88,7 @@
     .row{display:flex;align-items:center;justify-content:space-between;gap:10px}
     .price{font-weight:900}
 
-    /* Botón de WhatsApp (solo el ícono abre el chat) */
+    /* Botón de WhatsApp */
     .wa-btn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;border:1px solid var(--brand);background:transparent;cursor:pointer}
     .wa-btn:hover{background:rgba(34,197,94,.12);transform:translateY(-1px)}
     .wa-btn svg{width:20px;height:20px}
@@ -105,7 +105,7 @@
 <body>
   <header class="container">
     <div class="brand">
-      <!-- Coloca tu logo en /images/logo_greenFlagbs.jpg -->
+      
       <img src="images/logo_greenFlagbs.jpg" alt="Green Flag BS" />
       <div class="name">Tienda de auriculares</div>
     </div>
@@ -132,7 +132,7 @@
       <!-- Producto 1 -->
       <article class="card" data-name="KZ EDX Pro X" data-price="110000" data-sku="EDXPROX" data-variant="Black">
         <div class="thumb-wrap">
-          <!-- Sube tu imagen (ideal 800×800 .webp o .jpg entre 500 y 1000 px) -->
+         
           <img class="thumb" src="images/Kz_edx_pro_xMIC.jpeg" alt="KZ EDX Pro X" loading="lazy" width="800" height="800" />
         </div>
         <div class="content">
@@ -260,9 +260,8 @@
   </footer>
 
   <script>
-    // Escribe tu número en formato internacional SIN '+', guiones ni ceros a la izquierda.
-    // Ej: +595 984 123 456  =>  "595984123456"
-    const WHATSAPP_NUMBER = "595986145356"; // ← reemplaza por tu número
+    
+    const WHATSAPP_NUMBER = "595986145356"; 
     const DEFAULT_TEXT = "Hola! Me interesa este producto:";
 
     function formatGs(n){
@@ -275,7 +274,7 @@
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
 
-    // Inicialización de productos (precio formateado + link WA en el botón)
+    
     document.querySelectorAll('.card').forEach(card=>{
       const name = card.dataset.name || '';
       const price = card.dataset.price || '';
