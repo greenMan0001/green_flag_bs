@@ -270,7 +270,7 @@
     function buildWaLink(name, price, sku, variant){
       const parts = [DEFAULT_TEXT, name];
       if(variant){ parts.push(`(${variant})`); }
-      const msg = `${parts.join(' ')}${} — Precio: ${formatGs(price)}. ¿Sigue disponible?`;
+      const msg = `${parts.join(' ')}${sku} — Precio: ${formatGs(price)}. ¿Sigue disponible?`;
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
 
